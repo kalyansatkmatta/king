@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Kalyan King</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -14,9 +18,7 @@
     }
 
     .container {
-      padding: 20px;
-      max-width: 500px;
-      margin: auto;
+      padding: 24px 16px;
     }
 
     .dp {
@@ -24,95 +26,102 @@
       height: 100px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
     h1 {
-      font-size: 26px;
-      margin: 10px 0;
+      font-size: 22px;
+      margin: 12px 0 8px;
     }
 
-    .telegram-btn {
-      display: block;
-      padding: 12px 25px;
-      background: #229ED9; /* Telegram Blue */
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
+    .description {
       font-size: 16px;
-      margin: 12px auto;
-      max-width: 280px;
-      animation: pulse 1.5s infinite;
-      box-shadow: 0 0 10px #229ED9, 0 0 20px #229ED9, 0 0 30px #229ED9;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .telegram-btn:hover {
-      background: red;
-      box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+      margin-bottom: 20px;
     }
 
     .countdown-text {
       background: #4CAF50;
-      display: block;
-      padding: 10px 20px;
       color: #fff;
-      border-radius: 5px;
       font-size: 16px;
-      margin: 12px auto;
-      max-width: 280px;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px auto;
+      width: 100%;
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    .telegram-btn {
+      display: block;
+      width: 100%;
+      padding: 14px 0;
+      margin: 14px auto 24px;
+      background-color: #0f8bff;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #0f8bff, 0 0 16px #0f8bff;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .telegram-btn:hover {
+      background-color: #0078ff;
+      box-shadow: 0 0 12px #00bfff, 0 0 24px #00bfff;
     }
 
     ul {
       list-style: none;
       padding: 0;
+      text-align: center;
       font-size: 16px;
-      text-align: left;
-      max-width: 400px;
-      margin: 15px auto;
+      line-height: 1.7;
+      margin: 24px 0;
     }
 
     ul li {
-      margin: 8px 0;
+      margin: 12px 0;
     }
 
     .note {
       font-size: 14px;
-      margin-top: 25px;
       padding: 0 10px;
+      line-height: 1.6;
     }
 
     footer {
       font-size: 12px;
-      margin-top: 30px;
+      margin: 30px 0 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="dpp.jpg" alt="Kalyan King logo" class="dp" />
+    <img 
+      src="dpp.jpg" 
+      alt="Kalyan King logo" 
+      class="dp" 
+      loading="lazy" 
+      decoding="async" 
+      width="100" 
+      height="100" 
+    />
     <h1>Kalyan King</h1>
     <p><small>26,295 Subscribers</small></p>
-    <div>All VIP Game Charts Available</div>
+    <div class="description">All VIP Game Charts Available</div>
 
-    <!-- Countdown and Telegram Button -->
     <div class="countdown-text">Free Joining Ends In <span id="timer">25</span>s</div>
     <a class="telegram-btn" href="https://t.me/+m4CA4XC74NIyYWU9" target="_blank">JOIN FREE TELEGRAM</a>
 
     <ul>
       <li>✅ Time to Time Chart Milenge Aap K</li>
-      <li>✅ Channel Join Karo, Results Dekh0</li>
+      <li>✅ Channel Join Karo, Results Dekho</li>
       <li>✅ वादा हैं आपसे निराश नहीं करेगे आपको</li>
       <li>✅ 100% L0SS Cover Ki Zimmedari</li>
     </ul>
 
     <p class="note">
-      NOTE: Hamara Kalyan VIP Channel Join Karne Par Aapko Sare VIP Chart Daily Time par free mein Milenge. Sirf 3 Din Tak Hamari Reports Par Kaam Karo, Results Apne Aap Dikh Jayega.
+      NOTE: Hamara Kalyan VIP Channel Join Karne Par Aapko Sare VIP Chart Daily Time par free mein Milenge.
+      Sirf 3 Din Tak Hamari Reports Par Kaam Karo, Results Apne Aap Dikh Jayega.
     </p>
   </div>
 
