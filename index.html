@@ -19,6 +19,7 @@
 
     .container {
       padding: 24px 16px;
+      max-width: 100%;
     }
 
     .dp {
@@ -37,6 +38,7 @@
     .description {
       font-size: 16px;
       margin-bottom: 20px;
+      color: red;
     }
 
     .countdown-text {
@@ -111,11 +113,11 @@
       height="100" 
     />
     <h1>Kalyan King</h1>
-    <p><small>26,295 Subscribers</small></p>
+    <p><small><span id="subscribers">26,295</span> Subscribers</small></p>
     <div class="description">All VIP Game Charts Available</div>
 
     <div class="countdown-text">Free Joining Ends In <span id="timer">25</span>s</div>
-    <a class="telegram-btn" href="https://telegram.me/+m4CA4XC74NIyYWU9" target="_blank">JOIN FREE TELEGRAM</a>
+    <a class="telegram-btn" href="https://telegram.me/+m4CA4XC74NIyYWU9">JOIN FREE TELEGRAM</a>
 
     <ul>
       <li>✅ Time to Time Chart Milenge Aap K</li>
@@ -131,6 +133,7 @@
   </div>
 
   <script>
+    // Countdown Redirect
     let timeLeft = 25;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
@@ -141,6 +144,15 @@
         window.location.href = "https://telegram.me/+m4CA4XC74NIyYWU9";
       }
     }, 1000);
+
+    // Simulated Subscriber Counter
+    let subs = 26295;
+    const subsElement = document.getElementById("subscribers");
+    const subsInterval = setInterval(() => {
+      subs++;
+      subsElement.textContent = subs.toLocaleString("en-IN");
+      if (subs >= 26350) clearInterval(subsInterval);
+    }, 3000);
   </script>
 
   <footer>
