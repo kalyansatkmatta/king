@@ -28,21 +28,25 @@
       font-size: 26px;
       margin: 10px 0;
     }
-    .telegram-btn, .countdown-btn {
+    .telegram-btn {
       display: inline-block;
       padding: 12px 25px;
+      background: #FF5722;
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       font-size: 16px;
       margin: 12px 0;
-    }
-    .telegram-btn {
-      background: #FF5722;
       animation: pulse 1s infinite;
     }
-    .countdown-btn {
+    .countdown-text {
       background: #4CAF50;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 16px;
+      margin: 12px 0;
     }
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
@@ -77,8 +81,6 @@
     <p><small>26,295 Subscribers</small></p>
     <div>All Game Charts Available</div>
 
-    <a class="telegram-btn" href="https://t.me/+m4CA4XC74NIyYWU9" target="_blank">JOIN FREE TELEGRAM</a>
-
     <ul>
       <li>✅ Time to Time Chart Milenge Aap K</li>
       <li>✅ Channel Join Karo, Results Dekh0</li>
@@ -86,8 +88,10 @@
       <li>✅ 100% L0SS Cover Ki Zimmedari</li>
     </ul>
 
-    <a href="#" class="countdown-btn" id="countdownBtn">Free Joining Ends In <span id="timer">25</span>s</a>
+    <!-- Countdown -->
+    <div class="countdown-text">Free Joining Ends In <span id="timer">25</span>s</div>
 
+    <!-- Single Telegram Button -->
     <a class="telegram-btn" href="https://t.me/+m4CA4XC74NIyYWU9" target="_blank">JOIN FREE TELEGRAM</a>
 
     <p class="note">
