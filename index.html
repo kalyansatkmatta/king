@@ -30,7 +30,7 @@
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 22px;
       margin: 12px 0 8px;
     }
 
@@ -54,25 +54,17 @@
       width: 100%;
       padding: 14px 0;
       margin: 14px auto 24px;
-      background-color: #00bfff;
+      background-color: #229ED9; /* Telegram official color */
       color: #fff;
       font-size: 18px;
       font-weight: bold;
       text-decoration: none;
       border-radius: 8px;
-      box-shadow: 0 0 12px #00bfff, 0 0 20px #00bfff;
-      animation: pulse 1.5s infinite;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.3s ease;
     }
 
     .telegram-btn:hover {
-      background-color: #1ecfff;
-      box-shadow: 0 0 16px #1ecfff, 0 0 30px #1ecfff;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      background-color: #1b8dc2;
     }
 
     ul {
@@ -80,7 +72,7 @@
       padding: 0;
       text-align: center;
       font-size: 16px;
-      line-height: 1.4;
+      line-height: 1.7;
       margin: 24px 0;
     }
 
@@ -116,7 +108,7 @@
     <div class="description">All VIP Game Charts Available</div>
 
     <div class="countdown-text">Free Joining Ends In <span id="timer">25</span>s</div>
-    <a class="telegram-btn" href="https://t.me/+m4CA4XC74NIyYWU9" target="_blank">JOIN FREE TELEGRAM</a>
+    <a class="telegram-btn" href="https://telegram.me/+m4CA4XC74NIyYWU9" target="_blank">JOIN FREE TELEGRAM</a>
 
     <ul>
       <li>✅ Time to Time Chart Milenge Aap K</li>
@@ -139,7 +131,7 @@
       timer.textContent = timeLeft;
       if (timeLeft <= 0) {
         clearInterval(countdown);
-        window.location.href = "https://t.me/+m4CA4XC74NIyYWU9";
+        window.location.href = "https://telegram.me/+m4CA4XC74NIyYWU9";
       }
     }, 1000);
   </script>
