@@ -12,11 +12,13 @@
       color: #222;
       text-align: center;
     }
+
     .container {
       padding: 20px;
       max-width: 500px;
       margin: auto;
     }
+
     .dp {
       width: 100px;
       height: 100px;
@@ -24,22 +26,32 @@
       object-fit: cover;
       margin-bottom: 15px;
     }
+
     h1 {
       font-size: 26px;
       margin: 10px 0;
     }
+
     .telegram-btn {
       display: block;
       padding: 12px 25px;
-      background: #FF5722;
+      background: #229ED9; /* Telegram Blue */
       color: #fff;
       text-decoration: none;
       border-radius: 5px;
       font-size: 16px;
       margin: 12px auto;
-      animation: pulse 1s infinite;
       max-width: 280px;
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 10px #229ED9, 0 0 20px #229ED9, 0 0 30px #229ED9;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .telegram-btn:hover {
+      background: red;
+      box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+    }
+
     .countdown-text {
       background: #4CAF50;
       display: block;
@@ -50,10 +62,12 @@
       margin: 12px auto;
       max-width: 280px;
     }
+
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
     }
+
     ul {
       list-style: none;
       padding: 0;
@@ -62,14 +76,17 @@
       max-width: 400px;
       margin: 15px auto;
     }
+
     ul li {
       margin: 8px 0;
     }
+
     .note {
       font-size: 14px;
       margin-top: 25px;
       padding: 0 10px;
     }
+
     footer {
       font-size: 12px;
       margin-top: 30px;
@@ -78,12 +95,12 @@
 </head>
 <body>
   <div class="container">
-    <img src="dpp.jpg" alt="Kalyan King Profile Photo" class="dp" />
+    <img src="dpp.jpg" alt="Kalyan King logo" class="dp" />
     <h1>Kalyan King</h1>
     <p><small>26,295 Subscribers</small></p>
-    <div>All Game Charts Available</div>
+    <div>All VIP Game Charts Available</div>
 
-    <!-- Countdown and Telegram Button Below the Above Div -->
+    <!-- Countdown and Telegram Button -->
     <div class="countdown-text">Free Joining Ends In <span id="timer">25</span>s</div>
     <a class="telegram-btn" href="https://t.me/+m4CA4XC74NIyYWU9" target="_blank">JOIN FREE TELEGRAM</a>
 
