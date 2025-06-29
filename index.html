@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Kalyan King</title>
 
-  <!-- Preload image for faster load -->
+  <!-- Preload image for fast paint -->
   <link rel="preload" as="image" href="bbb.webp" type="image/webp" />
 
   <style>
@@ -21,9 +21,6 @@
       overflow: hidden;
       background: #fff;
       font-family: system-ui, sans-serif;
-    }
-
-    body {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,20 +28,12 @@
 
     .box-container {
       position: relative;
-      width: 92%;
-      max-width: 420px;
-      padding: 3px;
+      width: 95%;
+      max-width: 500px;
+      padding: 5px;
       border-radius: 12px;
-    }
-
-    .box {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 10px;
-      padding: 20px;
-      position: relative;
-      z-index: 2;
-      text-align: center;
+      margin-top: 25vh;
+      margin-bottom: 50vh;
     }
 
     .box-container::before {
@@ -53,7 +42,7 @@
       top: 0; left: 0; right: 0; bottom: 0;
       border-radius: 12px;
       padding: 3px;
-      background: linear-gradient(90deg, #000, gold, #000);
+      background: linear-gradient(90deg, #000, red, #000);
       background-size: 600% 600%;
       animation: borderMove 3s linear infinite;
       z-index: 1;
@@ -64,6 +53,17 @@
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
+    }
+
+    .box {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+      border: 3px solid rgba(0,0,0,0.6);
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
     }
 
     img.dp {
@@ -155,7 +155,9 @@
       <div class="countdown">Free Joining Ends In <span id="timer">20</span> Seconds</div>
       <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-          <path d="M120,0C53.7,0,0,53.7,0,120s53.7,120,120,120s120-53.7,120-120S186.3,0,120,0z M177.3,78.2l-21.2,99.6 c-1.6,7.1-5.8,8.8-11.7,5.5l-32.4-23.9l-15.6,15.1c-1.7,1.7-3.2,3.2-6.5,3.2l2.3-32.9l59.9-54.1c2.6-2.3-0.6-3.7-4-1.4L83.3,134.1 l-31.7-9.9c-6.9-2.2-7.1-6.9,1.5-10.2l123.2-47.6C180.1,64.2,182.2,66.3,177.3,78.2z"/>
+          <path d="M120,0C53.7,0,0,53.7,0,120s53.7,120,120,120s120-53.7,120-120S186.3,0,120,0z M177.3,78.2l-21.2,99.6 
+            c-1.6,7.1-5.8,8.8-11.7,5.5l-32.4-23.9l-15.6,15.1c-1.7,1.7-3.2,3.2-6.5,3.2l2.3-32.9l59.9-54.1c2.6-2.3-0.6-3.7-4-1.4L83.3,134.1 
+            l-31.7-9.9c-6.9-2.2-7.1-6.9,1.5-10.2l123.2-47.6C180.1,64.2,182.2,66.3,177.3,78.2z"/>
         </svg>
         JOIN FREE TELEGRAM
       </a>
@@ -163,6 +165,7 @@
     </div>
   </div>
 
+  <!-- JS: Countdown + Subscriber Increment -->
   <script defer>
     let timeLeft = 20;
     const timer = document.getElementById("timer");
@@ -186,5 +189,26 @@
       if (count >= end) clearInterval(counterInterval);
     }, interval);
   </script>
+
+  <!-- Meta Pixel (Deferred for Speed) -->
+  <script>
+    window.addEventListener('load', function () {
+      !function(f,b,e,v,n,t,s){
+        if(f.fbq)return;n=f.fbq=function(){
+          n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+        };
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1897590107478926');
+      fbq('track', 'PageView');
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1897590107478926&ev=PageView&noscript=1" />
+  </noscript>
 </body>
 </html>
