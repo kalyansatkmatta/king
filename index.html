@@ -4,22 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalyan King</title>
-
-  <!-- Preload DP -->
   <link rel="preload" as="image" href="dpp.webp" />
-
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-
     html, body {
       height: 100vh;
       overflow: hidden;
-      background: #fff;
       font-family: system-ui, sans-serif;
+      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -27,32 +23,29 @@
 
     .box-border-animation {
       position: relative;
-      width: 85%; /* reduced from 90% */
-      max-width: 480px; /* tighter box for mobile */
-      padding: 3px;
+      width: 95%;
+      max-width: 400px;
       margin-top: 8vh;
       margin-bottom: 12vh;
+      padding: 3px;
     }
 
     .wrapper {
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(8px);
       border-radius: 10px;
-      box-shadow:
-        0 0 15px rgba(255, 255, 255, 0.6),
-        0 0 25px rgba(255, 255, 255, 0.4);
       padding: 20px;
       text-align: center;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
     }
 
     .box-border-animation::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
       border-radius: 10px;
       padding: 3px;
-      background: linear-gradient(0deg,
-        #000 0%, #f00 25%, #000 50%, #f00 75%, #000 100%);
+      background: linear-gradient(0deg, #000 0%, #f00 25%, #000 50%, #f00 75%, #000 100%);
       background-size: 400% 400%;
       animation: rotateBorder 4s linear infinite;
       z-index: 0;
@@ -122,8 +115,10 @@
       margin: 0 auto 20px;
     }
 
-    .telegram-btn span {
-      font-size: 18px;
+    .telegram-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
     }
 
     @keyframes pulse {
@@ -138,7 +133,6 @@
     }
   </style>
 </head>
-
 <body>
   <div class="box-border-animation">
     <div class="wrapper">
@@ -149,8 +143,8 @@
         width="80"
         height="80"
         loading="eager"
-        fetchpriority="high"
         decoding="async"
+        fetchpriority="high"
       />
 
       <h1>KALYAN KING</h1>
@@ -163,15 +157,18 @@
       </div>
 
       <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
-        <span>📲</span> JOIN FREE TELEGRAM
+        <svg viewBox="0 0 24 24">
+          <path d="M9.999 15.172L9.999 19.755C9.999 19.894 10.146 20.001 10.25 19.939L12.998 18.278L15.75 19.939C15.854 20.001 16 19.894 16 19.755L16 15.172L9.999 15.172ZM22 12.002C22 6.478 17.523 2 12 2S2 6.478 2 12.002C2 17.525 6.477 22.003 12 22.003S22 17.525 22 12.002ZM9.884 16.308L15.378 9.49C15.582 9.245 15.265 9.045 15.043 9.261L8.621 15.607C8.47 15.757 8.471 15.998 8.623 16.147L9.252 16.747C9.423 16.913 9.74 16.795 9.884 16.308Z" />
+        </svg>
+        JOIN FREE TELEGRAM
       </a>
 
       <div class="bottom-line">SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO</div>
     </div>
   </div>
 
-  <!-- Inline script -->
   <script>
+    // Countdown
     let timeLeft = 20;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
@@ -183,12 +180,13 @@
       }
     }, 1000);
 
+    // Animated subscriber count
     const start = 26295, end = 26350, duration = 4000;
     const steps = end - start;
     const interval = duration / steps;
     let count = start;
-
     const counter = document.getElementById("subscriberCount");
+
     const counterInterval = setInterval(() => {
       count++;
       counter.textContent = count.toLocaleString("en-IN");
