@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Kalyan King</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
@@ -18,11 +19,12 @@
     }
 
     .container {
-      padding: 24px 16px;
-      max-width: 100%;
+      padding: 20px 16px;
+      max-width: 480px;
+      margin: auto;
     }
 
-    .dp {
+    img.dp {
       width: 100px;
       height: 100px;
       border-radius: 50%;
@@ -31,39 +33,50 @@
     }
 
     h1 {
-      font-size: 26px;
-      margin: 12px 0 8px;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 8px 0 4px;
     }
 
-    .description {
+    .subscribers {
       font-size: 16px;
-      margin-bottom: 20px;
-      color: red;
+      color: #555;
+      margin-bottom: 16px;
     }
 
-    .countdown-text {
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #d10000;
+      margin-bottom: 20px;
+    }
+
+    .countdown {
       background: #4CAF50;
       color: #fff;
       font-size: 16px;
       padding: 10px;
       border-radius: 5px;
-      margin: 15px auto;
-      width: 100%;
+      margin-bottom: 16px;
     }
 
     .telegram-btn {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       width: 100%;
+      max-width: 360px;
       padding: 14px 0;
-      margin: 14px auto 24px;
+      margin: 0 auto 20px;
       background-color: #229ED9;
-      color: #fff;
-      font-size: 18px;
+      color: white;
+      font-size: 16px;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease;
+      border-radius: 50px;
       animation: pulse 1.6s infinite;
+      transition: background 0.3s ease;
     }
 
     .telegram-btn:hover {
@@ -71,33 +84,14 @@
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.03); opacity: 0.92; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-      font-size: 16px;
-      line-height: 1.3;
-      margin: 24px 0;
-    }
-
-    ul li {
-      margin: 12px 0;
-    }
-
-    .note {
-      font-size: 14px;
-      padding: 0 10px;
-      line-height: 1.6;
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.95; }
     }
 
     footer {
       font-size: 12px;
-      margin: 30px 0 20px;
+      margin-top: 30px;
+      color: #666;
     }
   </style>
 </head>
@@ -105,36 +99,35 @@
   <div class="container">
     <img 
       src="dpp.jpg" 
-      alt="Kalyan King logo" 
-      class="dp" 
+      alt="Kalyan King DP" 
+      class="dp"
       loading="lazy" 
-      decoding="async" 
-      width="100" 
-      height="100" 
+      decoding="async"
+      width="100"
+      height="100"
     />
+
     <h1>Kalyan King</h1>
-    <p><small><span id="subscribers">26,295</span> Subscribers</small></p>
-    <div class="description">All VIP Game Charts Available</div>
+    <div class="subscribers"><span id="subscriberCount">26,295</span> Subscribers</div>
 
-    <div class="countdown-text">Free Joining Ends In <span id="timer">25</span>s</div>
-    <a class="telegram-btn" href="https://telegram.me/+m4CA4XC74NIyYWU9">JOIN FREE TELEGRAM</a>
+    <h2>All Game VIP Charts Available Here</h2>
 
-    <ul>
-      <li>✅ Time to Time Chart Milenge Aap K</li>
-      <li>✅ Channel Join Karo, Results Dekho</li>
-      <li>✅ वादा हैं आपसे निराश नहीं करेगे आपको</li>
-      <li>✅ 100% L0SS Cover Ki Zimmedari</li>
-    </ul>
+    <div class="countdown">
+      Free Joining Ends In <span id="timer">20</span> Seconds
+    </div>
 
-    <p class="note">
-      NOTE: Hamara Kalyan VIP Channel Join Karne Par Aapko Sare VIP Chart Daily Time par free mein Milenge.
-      Sirf 3 Din Tak Hamari Reports Par Kaam Karo, Results Apne Aap Dikh Jayega.
-    </p>
+    <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
+      <i class="fab fa-telegram-plane"></i> JOIN FREE TELEGRAM
+    </a>
   </div>
 
+  <footer>
+    © 2025 Kalyan King • All Rights Reserved
+  </footer>
+
   <script>
-    // Countdown Redirect
-    let timeLeft = 25;
+    // Countdown timer
+    let timeLeft = 20;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
       timeLeft--;
@@ -145,18 +138,20 @@
       }
     }, 1000);
 
-    // Simulated Subscriber Counter
-    let subs = 26295;
-    const subsElement = document.getElementById("subscribers");
-    const subsInterval = setInterval(() => {
-      subs++;
-      subsElement.textContent = subs.toLocaleString("en-IN");
-      if (subs >= 26350) clearInterval(subsInterval);
-    }, 3000);
-  </script>
+    // Subscriber count animation
+    const startCount = 26295;
+    const endCount = 26350;
+    const duration = 4000; // 4 seconds
+    const steps = endCount - startCount;
+    const incrementTime = duration / steps;
+    let currentCount = startCount;
 
-  <footer>
-    <p>© 2025 Kalyan King • All Rights Reserved</p>
-  </footer>
+    const subscriberEl = document.getElementById("subscriberCount");
+    const subInterval = setInterval(() => {
+      currentCount++;
+      subscriberEl.textContent = currentCount.toLocaleString("en-IN");
+      if (currentCount >= endCount) clearInterval(subInterval);
+    }, incrementTime);
+  </script>
 </body>
 </html>
