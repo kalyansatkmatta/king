@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalyan King</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -12,93 +13,80 @@
     }
 
     body {
-      background-color: #ffffff;
-      font-family: 'Segoe UI', sans-serif;
-      color: #000;
+      background: #fff;
+      font-family: Arial, sans-serif;
+      color: #111;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
+      align-items: start;
     }
 
-   .wrapper {
-  position: relative;
-  width: 90%;
-  max-width: 400px;
-  padding: 20px;
-  margin-top: 25vh;
-  margin-bottom: 50vh;
-  background: rgba(255, 255, 255, 0.15); /* transparent white */
-  backdrop-filter: blur(8px);
-  border-radius: 15px;
-  border: 5px solid transparent;
-  animation: neon-pulse 2s infinite alternate;
-  box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.3),
-    0 0 20px rgba(255, 255, 255, 0.5),
-    0 0 30px rgba(255, 255, 255, 0.7); /* white neon glow */
-  z-index: 1;
-}
+    .box-border-animation {
+      position: relative;
+      width: 90%;
+      max-width: 400px;
+      margin: 25vh auto 50vh auto;
+      padding: 5px;
+    }
 
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.6),
+        0 0 25px rgba(255, 255, 255, 0.4);
+      padding: 20px;
+      text-align: center;
+    }
 
-    /* Neon border animation */
-    .border-animate {
+    .box-border-animation::before {
+      content: '';
       position: absolute;
-      top: -5px; left: -5px;
-      right: -5px; bottom: -5px;
-      z-index: -1;
-      border-radius: 15px;
-      background: linear-gradient(0deg, #000, #ff0000, #000);
-      background-size: 300% 300%;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 10px;
+      padding: 2px;
+      background: linear-gradient(0deg,
+        #000 0%, #f00 25%, #000 50%, #f00 75%, #000 100%);
+      background-size: 400% 400%;
       animation: rotateBorder 4s linear infinite;
+      z-index: 0;
+
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
     }
 
     @keyframes rotateBorder {
       0% {
         background-position: 0% 50%;
       }
-      25% {
-        background-position: 50% 100%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      75% {
-        background-position: 50% 0%;
-      }
       100% {
-        background-position: 0% 50%;
+        background-position: 400% 50%;
       }
     }
 
-    @keyframes neon-pulse {
-      from {
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-      }
-      to {
-        box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
-      }
-    }
-
-    .dp {
-      width: 90px;
-      height: 90px;
+    img.dp {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 0 auto 20px;
-      display: block;
+      margin-bottom: 16px;
     }
 
     h1 {
       font-size: 28px;
-      color: #002366; /* dark blue */
-      margin-bottom: 25px;
+      font-weight: bold;
+      color: #002f6c;
+      margin-bottom: 20px;
     }
 
     .subscribers {
       font-size: 16px;
-      font-weight: bold;
       color: #000;
       margin-bottom: 30px;
     }
@@ -106,78 +94,79 @@
     h2 {
       font-size: 18px;
       font-weight: bold;
-      color: #002366;
+      color: #002f6c;
       margin-bottom: 30px;
     }
 
     .countdown {
-      background: #1e90ff; /* attractive blue */
-      color: white;
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      font-weight: bold;
+      background: #ff0077;
+      color: #fff;
       font-size: 14px;
+      padding: 14px;
+      border-radius: 6px;
+      margin-bottom: 30px;
     }
 
     .telegram-btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 14px 0;
+      max-width: 300px;
+      padding: 12px;
       background-color: #229ED9;
-      color: white;
+      color: #fff;
+      font-size: 15px;
       font-weight: bold;
-      font-size: 16px;
-      border-radius: 40px;
       text-decoration: none;
+      border-radius: 40px;
       animation: pulse 1.5s infinite;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
+    }
+
+    .telegram-btn i {
+      font-size: 18px;
     }
 
     @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(1.05);
-        opacity: 0.9;
-      }
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.95; }
     }
 
-    .subtext {
-      font-size: 14px;
+    .bottom-line {
       color: #000;
-      font-weight: bold;
+      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div class="wrapper">
-    <div class="border-animate"></div>
+  <div class="box-border-animation">
+    <div class="wrapper">
+      <img src="dpp.webp" alt="Kalyan King DP" class="dp" loading="eager" width="80" height="80" />
 
-    <img src="dpp.webp" alt="Kalyan King" class="dp" loading="eager" fetchpriority="high" decoding="async" />
+      <h1>KALYAN KING</h1>
+      <div class="subscribers"><span id="subscriberCount">26,295</span> Subscribers</div>
 
-    <h1>KALYAN KING</h1>
+      <h2>All Game VIP Charts Available Here</h2>
 
-    <div class="subscribers"><span id="subscriberCount">26,295</span> Subscribers</div>
+      <div class="countdown">
+        Free Joining Ends In <span id="timer">20</span> Seconds
+      </div>
 
-    <h2>All Game VIP Charts Available Here</h2>
+      <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
+        <i class="fab fa-telegram-plane"></i> JOIN FREE TELEGRAM
+      </a>
 
-    <div class="countdown">Free Joining Ends In <span id="timer">20</span> Seconds</div>
-
-    <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
-      <i class="fa-brands fa-telegram"></i> JOIN FREE TELEGRAM
-    </a>
-
-    <div class="subtext">SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO</div>
+      <div class="bottom-line">SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO</div>
+    </div>
   </div>
 
-  <script>
-    // Countdown timer
+  <script defer>
+    // Countdown
     let timeLeft = 20;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
@@ -189,23 +178,18 @@
       }
     }, 1000);
 
-    // Subscriber animation
-    const start = 26295;
-    const end = 26350;
-    const duration = 4000;
+    // Subscriber Animation
+    const start = 26295, end = 26350, duration = 4000;
     const steps = end - start;
     const interval = duration / steps;
     let count = start;
-    const counter = document.getElementById("subscriberCount");
 
+    const counter = document.getElementById("subscriberCount");
     const counterInterval = setInterval(() => {
       count++;
       counter.textContent = count.toLocaleString("en-IN");
       if (count >= end) clearInterval(counterInterval);
     }, interval);
   </script>
-
-  <!-- Font Awesome for Telegram Icon -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" async></script>
 </body>
 </html>
