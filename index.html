@@ -27,8 +27,8 @@
 
     .box-border-animation {
       position: relative;
-      width: 90%;
-      max-width: 400px;
+      width: 85%; /* reduced from 90% */
+      max-width: 360px; /* tighter box for mobile */
       padding: 3px;
       margin-top: 8vh;
       margin-bottom: 12vh;
@@ -170,9 +170,8 @@
     </div>
   </div>
 
-  <!-- Inline script deferred until paint -->
+  <!-- Inline script -->
   <script>
-    // Countdown redirect
     let timeLeft = 20;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
@@ -184,7 +183,6 @@
       }
     }, 1000);
 
-    // Subscriber animation
     const start = 26295, end = 26350, duration = 4000;
     const steps = end - start;
     const interval = duration / steps;
