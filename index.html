@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalyan King</title>
-  <link rel="preload" as="image" href="dpp_optimized.webp" />
+  <link rel="preload" as="image" href="dpp.webp" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     html, body {
-      height: 100%;
-      background: #fff;
+      height: 100vh;
+      width: 100vw;
       overflow: hidden;
+      background-color: #ffffff;
       font-family: system-ui, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
@@ -19,45 +24,50 @@
     .container {
       height: 100%;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
+      padding-top: 25vh;
+      padding-bottom: 10vh;
+    }
+
+    .box-wrapper {
+      position: relative;
+      width: 95%;
+      max-width: 460px;
+      padding: 3px;
+      border-radius: 12px;
     }
 
     .box {
-      width: 90%;
-      max-width: 420px;
-      padding: 24px 20px;
       background: rgba(255, 255, 255, 0.85);
       border-radius: 10px;
-      border: 3px solid transparent;
+      padding: 24px 20px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      z-index: 2;
       position: relative;
-      overflow: hidden;
     }
 
-    .box::before {
+    /* Animated Border */
+    .box-wrapper::before {
       content: "";
       position: absolute;
-      top: -3px; left: -3px; right: -3px; bottom: -3px;
-      border: 3px solid;
-      border-image: linear-gradient(270deg, #000, gold, #000) 1;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 12px;
+      padding: 3px;
+      background: linear-gradient(90deg, #000, gold, #000);
+      background-size: 600% 600%;
       animation: animate-border 4s linear infinite;
       z-index: 1;
     }
 
-    .box * {
-      position: relative;
-      z-index: 2;
-    }
-
     @keyframes animate-border {
-      0% { border-image-source: linear-gradient(90deg, #000, gold); }
-      25% { border-image-source: linear-gradient(180deg, #000, gold); }
-      50% { border-image-source: linear-gradient(270deg, #000, gold); }
-      75% { border-image-source: linear-gradient(360deg, #000, gold); }
-      100% { border-image-source: linear-gradient(90deg, #000, gold); }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    img.dp {
+    .dp {
       width: 90px;
       height: 90px;
       border-radius: 50%;
@@ -68,19 +78,19 @@
     h1 {
       color: #002060;
       font-size: 26px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .subscribers {
       font-size: 16px;
       color: #000;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     h2 {
       font-size: 18px;
       color: #002060;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .countdown {
@@ -89,7 +99,7 @@
       font-size: 15px;
       padding: 12px;
       border-radius: 6px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .telegram-btn {
@@ -122,40 +132,42 @@
 
     .note {
       font-size: 14px;
-      color: #222;
+      color: #111;
       font-weight: bold;
-      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="box">
-      <img src="dpp_optimized.webp" alt="Kalyan King DP" class="dp" loading="eager" fetchpriority="high" decoding="async" />
+    <div class="box-wrapper">
+      <div class="box">
+        <img src="dpp.webp" alt="Kalyan King DP" class="dp" loading="eager" fetchpriority="high" decoding="async" />
 
-      <h1>KALYAN KING</h1>
+        <h1>KALYAN KING</h1>
 
-      <div class="subscribers">
-        <span id="subscriberCount">26,295</span> Subscribers
+        <div class="subscribers">
+          <span id="subscriberCount">26,295</span> Subscribers
+        </div>
+
+        <h2>All Game VIP Charts Available Here</h2>
+
+        <div class="countdown">
+          Free Joining Ends In <span id="timer">20</span> Seconds
+        </div>
+
+        <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+            <path d="M120,0C53.7,0,0,53.7,0,120s53.7,120,120,120s120-53.7,120-120S186.3,0,120,0z M177.3,78.2l-21.2,99.6 c-1.6,7.1-5.8,8.8-11.7,5.5l-32.4-23.9l-15.6,15.1c-1.7,1.7-3.2,3.2-6.5,3.2l2.3-32.9l59.9-54.1c2.6-2.3-0.6-3.7-4-1.4L83.3,134.1 l-31.7-9.9c-6.9-2.2-7.1-6.9,1.5-10.2l123.2-47.6C180.1,64.2,182.2,66.3,177.3,78.2z"/>
+          </svg>
+          JOIN FREE TELEGRAM
+        </a>
+
+        <div class="note">SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO</div>
       </div>
-
-      <h2>All Game VIP Charts Available Here</h2>
-
-      <div class="countdown">
-        Free Joining Ends In <span id="timer">20</span> Seconds
-      </div>
-
-      <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><path d="M120,0C53.7,0,0,53.7,0,120s53.7,120,120,120s120-53.7,120-120S186.3,0,120,0z M177.3,78.2l-21.2,99.6 c-1.6,7.1-5.8,8.8-11.7,5.5l-32.4-23.9l-15.6,15.1c-1.7,1.7-3.2,3.2-6.5,3.2l2.3-32.9l59.9-54.1c2.6-2.3-0.6-3.7-4-1.4L83.3,134.1 l-31.7-9.9c-6.9-2.2-7.1-6.9,1.5-10.2l123.2-47.6C180.1,64.2,182.2,66.3,177.3,78.2z"/></svg>
-        JOIN FREE TELEGRAM
-      </a>
-
-      <div class="note">SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO</div>
     </div>
   </div>
 
   <script>
-    // Countdown
     let timeLeft = 20;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
@@ -167,7 +179,6 @@
       }
     }, 1000);
 
-    // Subscriber count animation
     const start = 26295, end = 26350, duration = 4000;
     const steps = end - start;
     const interval = duration / steps;
