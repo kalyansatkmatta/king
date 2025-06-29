@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Kalyan King</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -35,29 +33,29 @@
     h1 {
       font-size: 28px;
       font-weight: bold;
-      margin: 8px 0 4px;
+      margin: 8px 0 25px;
     }
 
     .subscribers {
       font-size: 16px;
       color: #555;
-      margin-bottom: 16px;
+      margin-bottom: 30px;
     }
 
     h2 {
       font-size: 18px;
       font-weight: bold;
       color: #d10000;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .countdown {
-      background: #4CAF50;
+      background: #007BFF;
       color: #fff;
       font-size: 16px;
       padding: 10px;
       border-radius: 5px;
-      margin-bottom: 16px;
+      margin-bottom: 30px;
     }
 
     .telegram-btn {
@@ -68,7 +66,7 @@
       width: 100%;
       max-width: 360px;
       padding: 14px 0;
-      margin: 0 auto 20px;
+      margin: 0 auto 30px;
       background-color: #229ED9;
       color: white;
       font-size: 16px;
@@ -98,13 +96,14 @@
 <body>
   <div class="container">
     <img 
-      src="dpp.jpg" 
+      src="dpp.webp" 
       alt="Kalyan King DP" 
       class="dp"
-      loading="lazy" 
-      decoding="async"
       width="100"
       height="100"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
     />
 
     <h1>Kalyan King</h1>
@@ -126,7 +125,7 @@
   </footer>
 
   <script>
-    // Countdown timer
+    // Countdown Timer
     let timeLeft = 20;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
@@ -138,10 +137,10 @@
       }
     }, 1000);
 
-    // Subscriber count animation
+    // Subscriber Count Animation
     const startCount = 26295;
     const endCount = 26350;
-    const duration = 4000; // 4 seconds
+    const duration = 4000;
     const steps = endCount - startCount;
     const incrementTime = duration / steps;
     let currentCount = startCount;
