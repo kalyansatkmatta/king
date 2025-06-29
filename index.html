@@ -4,26 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Kalyan King</title>
-
-  <!-- Preload for image -->
-  <link rel="preload" as="image" href="dpp.webp" type="image/webp" />
-
+  <link rel="preload" as="image" href="dpp.webp" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: system-ui, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: #ffffff;
-      color: #222;
-      text-align: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      padding: 16px;
-      max-width: 480px;
-      margin: auto;
+    .card {
+      background-color: rgba(0, 0, 0, 0.2);
+      border: 2px solid #000;
+      padding: 24px;
+      border-radius: 16px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
     }
 
     .dp {
@@ -35,35 +37,36 @@
     }
 
     h1 {
-      font-size: 32px;
-      color: #d10000;
+      font-size: 34px;
+      color: #FFD700; /* Premium gold */
       margin-bottom: 25px;
     }
 
     .subscribers {
       font-size: 16px;
-      color: #333;
+      color: #fff;
       margin-bottom: 30px;
     }
 
     h2 {
       font-size: 18px;
       font-weight: 600;
-      color: #d10000;
+      color: #FFD700;
       margin-bottom: 30px;
     }
 
     .countdown {
-      background: #007BFF;
+      background: #FF8C00; /* Action orange */
       color: #fff;
-      font-size: 14px;
-      padding: 20px;
-      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 16px;
+      border-radius: 8px;
       margin-bottom: 30px;
     }
 
     .telegram-btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
@@ -73,17 +76,15 @@
       margin: 0 auto 30px;
       background-color: #229ED9;
       color: white;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: bold;
       text-decoration: none;
       border-radius: 40px;
       animation: pulse 1.3s infinite;
     }
 
-    .telegram-btn svg {
-      width: 20px;
-      height: 20px;
-      fill: white;
+    .telegram-btn span {
+      font-size: 18px;
     }
 
     @keyframes pulse {
@@ -91,23 +92,15 @@
       50% { transform: scale(1.05); opacity: 0.95; }
     }
 
-    .promo-text {
-      font-size: 16px;
-      font-weight: 600;
-      color: #1a73e8;
-      margin-top: 60px;
-      margin-bottom: 50px;
-    }
-
-    footer {
-      font-size: 11px;
-      color: #555;
-      margin-top: 150px;
+    .note {
+      font-size: 14px;
+      color: #fff;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="card">
     <img 
       src="dpp.webp" 
       alt="Kalyan King DP" 
@@ -128,22 +121,16 @@
       Free Joining Ends In <span id="timer">20</span> Seconds
     </div>
 
-    <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn" aria-label="Join Free Telegram">
-      <!-- Inline Telegram Icon -->
-      <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
-        <path d="M120,0C53.7,0,0,53.7,0,120s53.7,120,120,120s120-53.7,120-120S186.3,0,120,0z M175.1,86.7
-        l-19.3,91.4c-1.5,6.5-5.3,8.1-10.7,5.1l-29.5-21.8l-14.2,13.6c-1.6,1.6-2.9,2.9-5.9,2.9l2.1-30.4l55.4-49.9
-        c2.4-2.1-0.5-3.3-3.7-1.2l-68.5,43.1l-29.5-9.2c-6.4-2-6.5-6.4,1.3-9.4l114.7-44.3C172,76.3,177.3,78.9,175.1,86.7z"/>
-      </svg>
-      JOIN FREE TELEGRAM
+    <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
+      <span>📲</span> JOIN FREE TELEGRAM
     </a>
 
-    <div class="promo-text">SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO</div>
+    <div class="note">
+      SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO
+    </div>
   </div>
 
-  <footer>© 2025 Kalyan King • All Rights Reserved</footer>
-
-  <script>
+  <script defer>
     // Countdown
     let timeLeft = 20;
     const timer = document.getElementById("timer");
@@ -156,7 +143,7 @@
       }
     }, 1000);
 
-    // Subscriber Count Animation
+    // Subscriber Animation
     const start = 26295, end = 26350, duration = 4000;
     const steps = end - start;
     const interval = duration / steps;
