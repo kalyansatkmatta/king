@@ -2,54 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Kalyan King</title>
-  <link rel="preload" as="image" href="dpp.webp" />
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html, body {
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-      background-color: #ffffff;
-      font-family: system-ui, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
+      width: 100%;
       height: 100%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 25vh;
-      padding-bottom: 10vh;
+      overflow: hidden;
+      background: #fff;
+      font-family: system-ui, sans-serif;
     }
 
-    .box-wrapper {
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box-container {
       position: relative;
-      width: 95%;
-      max-width: 460px;
+      width: 92%;
+      max-width: 420px;
       padding: 3px;
       border-radius: 12px;
     }
 
     .box {
       background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
       border-radius: 10px;
-      padding: 24px 20px;
-      text-align: center;
-      backdrop-filter: blur(4px);
-      z-index: 2;
+      padding: 20px;
       position: relative;
+      z-index: 2;
+      text-align: center;
     }
 
-    /* Animated Border */
-    .box-wrapper::before {
+    .box-container::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -57,19 +51,20 @@
       padding: 3px;
       background: linear-gradient(90deg, #000, gold, #000);
       background-size: 600% 600%;
-      animation: animate-border 4s linear infinite;
+      animation: borderMove 3s linear infinite;
       z-index: 1;
+      pointer-events: none;
     }
 
-    @keyframes animate-border {
+    @keyframes borderMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    .dp {
-      width: 90px;
-      height: 90px;
+    img.dp {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 16px;
@@ -78,28 +73,28 @@
     h1 {
       color: #002060;
       font-size: 26px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .subscribers {
-      font-size: 16px;
+      font-size: 15px;
       color: #000;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     h2 {
-      font-size: 18px;
       color: #002060;
-      margin-bottom: 25px;
+      font-size: 18px;
+      margin-bottom: 20px;
     }
 
     .countdown {
-      background: #ff2c74;
+      background: #ff0055;
       color: #fff;
-      font-size: 15px;
+      font-size: 14px;
       padding: 12px;
-      border-radius: 6px;
-      margin-bottom: 25px;
+      border-radius: 5px;
+      margin-bottom: 22px;
     }
 
     .telegram-btn {
@@ -108,26 +103,26 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 12px 0;
-      background-color: #229ED9;
+      background: #229ED9;
       color: white;
       font-size: 15px;
       font-weight: bold;
-      text-decoration: none;
+      padding: 12px 0;
       border-radius: 40px;
-      animation: pulse 1.3s infinite;
-      margin-bottom: 20px;
+      text-decoration: none;
+      margin-bottom: 16px;
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.95; }
     }
 
     .telegram-btn svg {
       width: 18px;
       height: 18px;
       fill: white;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.05); opacity: 0.95; }
     }
 
     .note {
@@ -138,32 +133,20 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="box-wrapper">
-      <div class="box">
-        <img src="dpp.webp" alt="Kalyan King DP" class="dp" loading="eager" fetchpriority="high" decoding="async" />
-
-        <h1>KALYAN KING</h1>
-
-        <div class="subscribers">
-          <span id="subscriberCount">26,295</span> Subscribers
-        </div>
-
-        <h2>All Game VIP Charts Available Here</h2>
-
-        <div class="countdown">
-          Free Joining Ends In <span id="timer">20</span> Seconds
-        </div>
-
-        <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
-            <path d="M120,0C53.7,0,0,53.7,0,120s53.7,120,120,120s120-53.7,120-120S186.3,0,120,0z M177.3,78.2l-21.2,99.6 c-1.6,7.1-5.8,8.8-11.7,5.5l-32.4-23.9l-15.6,15.1c-1.7,1.7-3.2,3.2-6.5,3.2l2.3-32.9l59.9-54.1c2.6-2.3-0.6-3.7-4-1.4L83.3,134.1 l-31.7-9.9c-6.9-2.2-7.1-6.9,1.5-10.2l123.2-47.6C180.1,64.2,182.2,66.3,177.3,78.2z"/>
-          </svg>
-          JOIN FREE TELEGRAM
-        </a>
-
-        <div class="note">SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO</div>
-      </div>
+  <div class="box-container">
+    <div class="box">
+      <img src="dpp.webp" alt="Kalyan King" class="dp" loading="eager" fetchpriority="high" decoding="async" />
+      <h1>KALYAN KING</h1>
+      <div class="subscribers"><span id="subscriberCount">26,295</span> Subscribers</div>
+      <h2>All Game VIP Charts Available Here</h2>
+      <div class="countdown">Free Joining Ends In <span id="timer">20</span> Seconds</div>
+      <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+          <path d="M120,0C53.7,0,0,53.7,0,120s53.7,120,120,120s120-53.7,120-120S186.3,0,120,0z M177.3,78.2l-21.2,99.6 c-1.6,7.1-5.8,8.8-11.7,5.5l-32.4-23.9l-15.6,15.1c-1.7,1.7-3.2,3.2-6.5,3.2l2.3-32.9l59.9-54.1c2.6-2.3-0.6-3.7-4-1.4L83.3,134.1 l-31.7-9.9c-6.9-2.2-7.1-6.9,1.5-10.2l123.2-47.6C180.1,64.2,182.2,66.3,177.3,78.2z"/>
+        </svg>
+        JOIN FREE TELEGRAM
+      </a>
+      <div class="note">SIRF 3 DIN HAMARE SATH KAAM KARKE DEKHO</div>
     </div>
   </div>
 
@@ -180,8 +163,7 @@
     }, 1000);
 
     const start = 26295, end = 26350, duration = 4000;
-    const steps = end - start;
-    const interval = duration / steps;
+    const interval = duration / (end - start);
     let count = start;
     const counter = document.getElementById("subscriberCount");
 
