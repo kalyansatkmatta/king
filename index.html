@@ -4,103 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>Kalyan King</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" as="image" href="dpp.webp" />
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: system-ui, sans-serif;
       background: linear-gradient(to bottom right, #ffffff, #cdf2ff);
       color: #222;
       text-align: center;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      padding: 20px 16px;
+      padding: 16px;
       max-width: 480px;
       margin: auto;
     }
 
-    img.dp {
-      width: 100px;
-      height: 100px;
+    .dp {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 16px;
     }
 
     h1 {
-      font-size: 32px;
-      font-weight: bold;
-      margin: 8px 0 25px;
+      font-size: 26px;
+      margin-bottom: 25px;
     }
 
     .subscribers {
       font-size: 16px;
-      color: #555;
-      margin-bottom: 40px;
+      color: #333;
+      margin-bottom: 30px;
     }
 
     h2 {
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 18px;
+      font-weight: 600;
       color: #d10000;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
     }
 
     .countdown {
       background: #007BFF;
       color: #fff;
-      font-size: 16px;
+      font-size: 14px;
       padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 50px;
+      border-radius: 6px;
+      margin-bottom: 30px;
     }
 
     .telegram-btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
       width: 100%;
-      max-width: 360px;
-      padding: 14px 0;
+      max-width: 300px;
+      padding: 12px 0;
       margin: 0 auto 30px;
       background-color: #229ED9;
       color: white;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 50px;
-      animation: pulse 1.6s infinite;
-      transition: background 0.3s ease;
-    }
-
-    .telegram-btn:hover {
-      background-color: #1b8dc2;
+      border-radius: 40px;
+      animation: pulse 1.3s infinite;
     }
 
     @keyframes pulse {
       0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.02); opacity: 0.95; }
+      50% { transform: scale(1.05); opacity: 0.95; }
     }
 
     footer {
-      font-size: 12px;
-      margin-top: 30px;
-      color: #666;
+      font-size: 11px;
+      color: #555;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <img 
-      src="dpd.webp" 
+      src="dpp.webp" 
       alt="Kalyan King DP" 
       class="dp"
-      width="100"
-      height="100"
+      width="80"
+      height="80"
       loading="eager"
       fetchpriority="high"
       decoding="async"
@@ -116,16 +110,14 @@
     </div>
 
     <a href="https://telegram.me/+m4CA4XC74NIyYWU9" class="telegram-btn">
-      <i class="fab fa-telegram-plane"></i> JOIN FREE TELEGRAM
+      <span style="font-size: 18px;">📲</span> JOIN FREE TELEGRAM
     </a>
   </div>
 
-  <footer>
-    © 2025 Kalyan King • All Rights Reserved
-  </footer>
+  <footer>© 2025 Kalyan King • All Rights Reserved</footer>
 
-  <script>
-    // Countdown Timer
+  <script defer>
+    // Countdown
     let timeLeft = 20;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
@@ -137,20 +129,18 @@
       }
     }, 1000);
 
-    // Subscriber Count Animation
-    const startCount = 26295;
-    const endCount = 26350;
-    const duration = 4000;
-    const steps = endCount - startCount;
-    const incrementTime = duration / steps;
-    let currentCount = startCount;
+    // Subscriber Animation
+    const start = 26295, end = 26350, duration = 4000;
+    const steps = end - start;
+    const interval = duration / steps;
+    let count = start;
 
-    const subscriberEl = document.getElementById("subscriberCount");
-    const subInterval = setInterval(() => {
-      currentCount++;
-      subscriberEl.textContent = currentCount.toLocaleString("en-IN");
-      if (currentCount >= endCount) clearInterval(subInterval);
-    }, incrementTime);
+    const counter = document.getElementById("subscriberCount");
+    const counterInterval = setInterval(() => {
+      count++;
+      counter.textContent = count.toLocaleString("en-IN");
+      if (count >= end) clearInterval(counterInterval);
+    }, interval);
   </script>
 </body>
 </html>
