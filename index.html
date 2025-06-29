@@ -19,15 +19,16 @@
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      align-items: start;
+      align-items: flex-start;
     }
 
     .box-border-animation {
       position: relative;
       width: 90%;
       max-width: 400px;
-      margin: 25vh auto 50vh auto;
-      padding: 5px;
+      padding: 3px; /* Updated border padding for 3px */
+      margin-top: 25vh; /* 1/4 from top */
+      margin-bottom: 50vh; /* 1/2 from bottom */
     }
 
     .wrapper {
@@ -48,7 +49,7 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       border-radius: 10px;
-      padding: 2px;
+      padding: 3px;
       background: linear-gradient(0deg,
         #000 0%, #f00 25%, #000 50%, #f00 75%, #000 100%);
       background-size: 400% 400%;
@@ -166,7 +167,6 @@
   </div>
 
   <script defer>
-    // Countdown
     let timeLeft = 20;
     const timer = document.getElementById("timer");
     const countdown = setInterval(() => {
@@ -178,7 +178,6 @@
       }
     }, 1000);
 
-    // Subscriber Animation
     const start = 26295, end = 26350, duration = 4000;
     const steps = end - start;
     const interval = duration / steps;
